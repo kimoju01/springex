@@ -76,4 +76,13 @@ public class SampleController {
 
     }
 
+    @GetMapping("/ex7")
+    public void ex7(String p1, int p2) {
+        // 문자열과 숫자를 파라미터로 처리한다.
+        // 만약 브라우저에서 숫자 대신에 알파벳을 보낸다면 NumberFormatException이 발생하고 실행 결과 400 에러(잘못된 요청)가 발생한다.
+        // 이를 해결하기 위해서 CommonExceptionAdvice에서 처리한다. -> 처리 후 @ResponseBody 이기 때문에 해당 return 메시지를 출력한다.
+        log.info("p1.........." + p1);
+        log.info("p2.........." + p2);
+    }
+
 }
